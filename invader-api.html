@@ -1,0 +1,42 @@
+
+<polymer-element name="invader-api" attributes="state">
+    <template>
+        <style>
+         :host { display: none; }
+        </style>
+    </template>
+    <script>
+     Polymer({
+         state: null,
+         ready: function() {
+             console.debug('opening websocket');
+             this.socket = new WebSocket('ws://10.20.30.40:8080/', 'janosh');
+             this.socket.onmessage = this.onMessage.bind(this);
+             this.socket.onerror = this.onError.bind(this);
+             this.socket.onopen =  this.onOpen.bind(this);
+             window.onbeforeunload = this.onClose.bind(this);
+         },
+         send: function() {
+             console.debug("sending", arguments);
+             try {
+                 this.socket.send(JSON.stringify(Array.prototype.slice.call(arguments)));
+             } catch(error) {
+                 console.error("Can't send to socket: ", error, this.socket);
+             };
+         },
+         onOpen: function() {
+             this.send('get', '/.')
+         },
+         onMessage: function(message) {
+             console.debug("received message", message);
+             this.state = JSON.parse(message.data);
+         },
+         onError: function (error) {
+             console.error('Websocket error', error, this.socket);
+         },
+         onClose: function() {
+             this.socket.close();
+         },
+     });
+    </script>
+</polymer-element>

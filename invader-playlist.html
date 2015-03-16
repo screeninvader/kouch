@@ -1,0 +1,30 @@
+<link rel="import" href="./invader-api.html">
+
+<polymer-element name="invader-playlist-item" attributes="item index">
+    <template>
+        <li on-click="{{clicked}}">{{item.title}}</li>
+    </template>
+    <script>
+     Polymer({
+         clicked: function() {
+             console.log(this.index);
+         }
+     });
+    </script>
+</polymer-element>
+
+<polymer-element name="invader-playlist">
+    <template>
+        <invader-api  id="api" state="{{state}}">
+        </invader-api>
+        <ul>
+            <template repeat="{{item, i in state.playlist.items}}">
+                <invader-playlist-item item="{{item}}" index="{{i}}">
+                </invader-playlist-item>
+            </template>
+        </ul>
+    </template>
+    <script>
+     Polymer({});
+    </script>
+</polymer-element>
