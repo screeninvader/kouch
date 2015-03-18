@@ -4,39 +4,49 @@ echo 'delete and recreate dist directory'
 rm dist/ -rf
 
 echo 'mkdir dist and its subdirs'
-mkdir -p dist dist/vendor/
+mkdir -p dist dist/vendor/ dist/js
 
 echo 'copy src/ files to dist/'
-cp -r \
-  src/img \
-  src/invader \
-  src/css \
-  src/js \
-  src/font \
-  src/index.jade \
-  dist/
+cd ./src && cp -r \
+  img invader css font index.jade \
+  ../dist/ \
+&& cd ../ \
+;
 
 cp -r \
   bower_components/* \
-  dist/vendor/
+  dist/vendor/ \
+;
 
-echo 'compile ecmascript7 to es5'
+echo 'babelify invader'
 node_modules/.bin/babel \
-  dist/ \
+  src/invader/ \
   --experimental \
-  --source-maps
+  --source-maps \
+  --out-dir dist/invader/ \
+;
 
-echo 'stylus compile invader css files'
-node_modules/.bin/stylus \
-  dist/ \
+echo 'browserify and babelify main app'
+#compile client side js
+node_modules/.bin/browserify \
+  src/js/ \
+  --outfile dist/js/index.js \
+  -t babelify \
+;
+
+echo 'stylus compile invader css styles'
+find dist/ -name "*.styl" -type f -exec node_modules/.bin/stylus \
+  {} \
   --import node_modules/nib/ \
+  --sourcemap \;
 
-echo 'jade compile html files in dist/src'
+echo 'jade compiling html files in dist/'
 node_modules/.bin/jade dist/invader
+
+echo 'jade compiling dist/index.jade'
 node_modules/.bin/jade dist/index.jade
 
-#~ echo 'clean up jade files'
-#~ find dist -name "*.jade" -type f -exec rm {} \;
-
-#~ echo 'clean up stylus files';
-#~ find ./dist/css -name '*.styl' -type f -exec rm {} \;
+echo 'clean up jade files'
+find ./dist -name "*.jade" -type f -exec rm {} \;
+echo 'clean up stylus files';
+find ./dist -name '*.styl' -type f -exec rm {} \;

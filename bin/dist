@@ -4,4 +4,7 @@ echo 'polymer-vulcanize all components into one file'
 node_modules/.bin/vulcanize \
   -o dist/vulcanized.html \
   dist/index.html \
-  --abspath ./dist/
+  --abspath ./dist/\
+  --inline \
+  --strip \
+;

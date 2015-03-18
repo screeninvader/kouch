@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo 'starting server...'
+babel-node bin/server.js
