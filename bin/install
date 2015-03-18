@@ -1,11 +1,14 @@
 #!/bin/bash
-#first install all dependencies
-npm install
+
+#first install npm dependencies
+npm install --production
+
+#use bower to install polymer and other clientside libraries
 ./node_modules/.bin/bower install
 
 #installs a google webfont for local use and serving
 ./node_modules/webfont-dl/bin/webfont-dl \
-  http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700 \
+  https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700 \
   --font-out=src/font \
   --out src/css/font.styl \
   --css-rel=/font
