@@ -8,7 +8,7 @@ mkdir -p dist dist/vendor/ dist/js
 
 echo 'copy src/ files to dist/'
 cd ./src && cp -r \
-  img invader css font index.jade \
+  img invader css font index.jade favicon.ico \
   ../dist/ \
 && cd ../ \
 ;
