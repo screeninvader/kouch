@@ -7,6 +7,16 @@ a distributable.
 vulcanized allows to additionally preback everything as one bundle
 
 ```bash
+#fastest way to get the environment running:
+git clone https://github.com/jaeh/outta_space
+cd outta_space
+./bin/install
+./bin/build
+./bin/server
+xdg-open http://localhost:1337/vulcanized
+```
+
+```bash
 #clone git repository
 git clone https://github.com/jaeh/outta_space 
 cd outta_space
