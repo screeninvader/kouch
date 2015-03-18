@@ -3,3 +3,4 @@ dist
 bower_components
 static/font
 src/css/font.styl
+npm-debug.log
