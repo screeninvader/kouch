@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo 'asking for root to make sure you want it'
+echo 'rm command will not use root'
+su root -c 'echo "delete node_modules, bower_components and dist"'
+
+rm -rf \
+  ./node_modules \
+  ./bower_components \
+  ./dist

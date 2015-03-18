@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo 'delete and recreate dist directory'
+rm dist/ -rf
+
+echo 'mkdir dist and its subdirs'
+mkdir -p dist dist/vendor/
+
+echo 'copy src/ files to dist/'
+cp -r \
+  src/img \
+  src/invader \
+  src/css \
+  src/js \
+  src/font \
+  src/index.jade \
+  dist/
+
+cp -r \
+  bower_components/* \
+  dist/vendor/
+
+echo 'compile ecmascript7 to es5'
+node_modules/.bin/babel \
+  dist/ \
+  --experimental \
+  --source-maps
+
+echo 'stylus compile invader css files'
+node_modules/.bin/stylus \
+  dist/ \
+  --import node_modules/nib/ \
+
+echo 'jade compile html files in dist/src'
+node_modules/.bin/jade dist/invader
+node_modules/.bin/jade dist/index.jade
+
+#~ echo 'clean up jade files'
+#~ find dist -name "*.jade" -type f -exec rm {} \;
+
+#~ echo 'clean up stylus files';
+#~ find ./dist/css -name '*.styl' -type f -exec rm {} \;
