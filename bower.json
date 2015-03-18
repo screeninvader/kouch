@@ -4,7 +4,7 @@
   "homepage": "https://github.com/screeninvader/outta_space",
   "authors": [
     "phaer",
-    "jascha ehrenreich"
+    "jascha ehrenreich",
     "amir hassan",
     "m68k",
     "norpol"
@@ -12,7 +12,6 @@
   "license": "probably will be AGPL",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.5.5",
-    "nib": "~1.1.0"
+    "polymer": "Polymer/polymer#~0.5.5"
   }
 }
