@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title ScreenInvader
+    meta(charset="utf-8")
+    meta(
+      name='viewport' 
+      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'
+    )
+
+    script(src="/vendor/webcomponentsjs/webcomponents.js")
+    link(rel="import" href="/vendor/polymer/polymer.html")
+    link(rel="import" href="/invader/playlist/invader-playlist.html")
+    link(rel="stylesheet" href="./invader/playlist/invader-playlist.html")
+
+  body(unresolved)
+    header.main
+      block header
+        img#logo(src='/img/logo.png')
+
+    div.main
+      block content
+        invader-playlist
+
+    script(src='/js/index.js')

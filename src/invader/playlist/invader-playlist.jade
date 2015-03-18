@@ -1,0 +1,12 @@
+link(rel='import' href='/invader/api/invader-api.html')
+link(rel='import' href='/invader/playlist/item/invader-playlist-item.html')
+
+polymer-element(name='invader-playlist')
+  template
+    invader-api#api(state='{{state}}')
+    ul
+      template(repeat='{{item, i in state.playlist.items}}')
+        invader-playlist-item(item='{{item}}' index='{{i}}')
+
+    link(rel='stylesheet' href='./invader-playlist.css')
+    script(src='./invader-playlist.js')
