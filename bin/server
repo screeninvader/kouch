@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo 'starting server...'
-node_modules/.bin/babel-node ./bin/server.js --dir=dist
+node_modules/.bin/sHTTP --dir=dist

@@ -48,6 +48,7 @@
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "nib": "^1.1.0",
+    "sHTTP": "git://github.com/jaeh/sHTTP",
     "stylus": "^0.50.0",
     "vulcanize": "^0.7.9",
     "webfont-dl": "^0.1.2"
