@@ -7,7 +7,7 @@ npm install --production
 ./node_modules/.bin/bower install
 
 #installs a google webfont for local use and serving
-./node_modules/webfont-dl/bin/webfont-dl \
+./node_modules/.bin/webfont-dl \
   https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700 \
   --font-out=src/font \
   --out src/css/font.styl \
