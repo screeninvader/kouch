@@ -6,14 +6,14 @@
   "license": "Probably will be AGPL",
   "main": "http://localhost:1337",
   "scripts": {
-    "start": "bin/build && bin/server"
+    "start": "bin/build && sudo bin/server"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/screeninvader/outta_space.git"
+    "url": "https://github.com/screeninvader/kouch.git"
   },
   "bugs": {
-    "url": "https://github.com/screeninvader/outta_space/issues"
+    "url": "https://github.com/screeninvader/kouch/issues"
   },
   "contributors": [
     {
@@ -38,7 +38,7 @@
       "github": "norpol"
     }
   ],
-  "homepage": "https://github.com/screeninvader/outta_space",
+  "homepage": "https://github.com/screeninvader/kouch",
   "dependencies": {
     "babel": "^4.7.13",
     "babelify": "^5.0.4",
@@ -48,7 +48,7 @@
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "nib": "^1.1.0",
-    "sHTTP": "git://github.com/jaeh/sHTTP",
+    "servomatic": "git://github.com/screeninvader/servomatic",
     "stylus": "^0.50.0",
     "vulcanize": "^0.7.9",
     "webfont-dl": "^0.1.2"
