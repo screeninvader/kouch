@@ -38,7 +38,8 @@ echo 'stylus compile invader css styles'
 find dist/ -name "*.styl" -type f -exec node_modules/.bin/stylus \
   {} \
   --import node_modules/nib/ \
-  --sourcemap \;
+  --sourcemap-inline \;\
+;
 
 echo 'jade compiling html files in dist/'
 node_modules/.bin/jade \
