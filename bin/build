@@ -41,10 +41,16 @@ find dist/ -name "*.styl" -type f -exec node_modules/.bin/stylus \
   --sourcemap \;
 
 echo 'jade compiling html files in dist/'
-node_modules/.bin/jade dist/invader
+node_modules/.bin/jade \
+  dist/invader \
+  --pretty \
+;
 
 echo 'jade compiling dist/index.jade'
-node_modules/.bin/jade dist/index.jade
+node_modules/.bin/jade \
+  dist/index.jade \
+  --pretty \
+;
 
 echo 'polymer-vulcanize all components into dist/vulcanized.html'
 node_modules/.bin/vulcanize \
