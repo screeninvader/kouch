@@ -57,7 +57,7 @@ function build() {
 
 function serve() {
     echo 'starting server...'
-    servomatic --dir=dist
+    ./node_modules/.bin/servomatic --dir dist --logDir 'dist/log' --port 1337 
 }
 
 # run the function given as the first argument

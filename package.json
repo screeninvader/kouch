@@ -1,12 +1,12 @@
 {
-  "name": "outta_space",
+  "name": "kouch",
   "version": "0.0.1",
   "description": "screeninvader frontend based on polymer",
   "author": "Metalab <metalab@lists.metalab.at>",
   "license": "Probably will be AGPL",
   "main": "http://localhost:1337",
   "scripts": {
-    "start": "bin/build && sudo bin/server"
+    "start": "./kouch.sh build && ./kouch.sh serve"
   },
   "repository": {
     "type": "git",
@@ -39,12 +39,11 @@
     }
   ],
   "homepage": "https://github.com/screeninvader/kouch",
-  "dependencies": {
+  "devDependencies": {
     "babel": "^4.7.13",
     "babelify": "^5.0.4",
     "bower": "^1.3.12",
     "browserify": "^9.0.3",
-    "express": "^4.12.3",
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "nib": "^1.1.0",
