@@ -4,3 +4,4 @@ bower_components
 src/font
 src/css/font.styl
 npm-debug.log
+babel.json
