@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "screeninvader frontend based on polymer",
   "author": "Metalab <metalab@lists.metalab.at>",
-  "license": "Probably will be AGPL",
+  "license": "AGPL",
   "main": "http://localhost:1337",
   "scripts": {
     "start": "./kouch.sh build && ./kouch.sh serve"
